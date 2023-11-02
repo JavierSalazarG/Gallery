@@ -1,0 +1,72 @@
+.main {
+  width: 100%;
+  min-height: 40vh;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1.5rem 1rem;
+}
+
+.div__element {
+  background-color: #d4e157;
+  border-radius: 1.25rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 13rem;
+  width: 9.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.div__element:hover {
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+}
+.img__element {
+  width: 8.5rem;
+  height: 9.25rem;
+  border-radius: 1.25rem;
+}
+
+.button__favorite {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.img_heart_good {
+  width: 40px;
+}
+
+.pulsate-fwd:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+  animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,123 @@
+.div__container {
+  border-left: 2px solid #d84315;
+  border-right: 2px solid #d84315;
+  border-radius: 2.6rem 2.6rem 0rem 0rem;
+}
+.div__container_img {
+  width: 100%;
+  height: 23rem;
+  background-color: #d84315;
+  display: flex;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.img__details {
+  max-width: 22.5rem;
+  width: 90%;
+  height: 20rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 2.5rem;
+}
+
+.div__text_ccontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.div__description {
+  width: 10rem;
+}
+
+.div__description h2,
+.div__extent h2 {
+  font-size: 1rem;
+}
+
+.div__description p,
+.div__extent p {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.div__extent {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.div__button {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.img__options {
+  width: 3rem;
+  cursor: pointer;
+}
+
+.vibrate-1:hover {
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
