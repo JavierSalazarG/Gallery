@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const favoriteSlice = createSlice({
   name: "favorite",
-
   initialState: {
     data: JSON.parse(localStorage.getItem("favorites")) || [],
+    filter: null,
   },
 
   reducers: {
@@ -30,9 +30,14 @@ export const favoriteSlice = createSlice({
       );
       localStorage.setItem("favorites", JSON.stringify(state.data));
     },
+    filterFavorite: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
 
 export const getGalleryData = (state) => state.favorite.data;
+export const getInfoFilter = (state) => state.favorite.filter;
 
-export const { addfavorite, deleteImage, updateImage } = favoriteSlice.actions;
+export const { addfavorite, deleteImage, updateImage, filterFavorite } =
+  favoriteSlice.actions;

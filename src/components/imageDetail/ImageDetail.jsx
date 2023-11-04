@@ -123,7 +123,7 @@ const ImageDetail = () => {
             <p>
               {imageFavorite.description
                 ? imageFavorite.description
-                : "No hay desccrpcion"}
+                : "There is no description"}
             </p>
           </div>
           <div className="div__extent">

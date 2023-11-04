@@ -5,6 +5,9 @@ import heartImage from "../../../public/4eba1449b54ec1a2dc5c16b773e00b28.png";
 import volverImage from "../../../public/volver.svg";
 import { useDispatch } from "react-redux";
 import { galleryThunk } from "../../features/Gallery/galleryThunk";
+
+import { filterFavorite } from "../../features/Gallery/favoriteSlice.js";
+
 const Header = () => {
   const [look, setLook] = useState();
   const dispatch = useDispatch();
@@ -19,7 +22,11 @@ const Header = () => {
   };
 
   const handleTags = (e) => {
-    dispatch(galleryThunk(e.target.value));
+    if (location.pathname === "/") {
+      dispatch(galleryThunk(e.target.value));
+    } else {
+      dispatch(filterFavorite(e.target.value));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -32,25 +39,64 @@ const Header = () => {
       <div className="div__nav">
         <form onSubmit={handleSubmit} className="form__nav">
           <input
-            className="input__nav"
+            className={
+              location.pathname === "/" ? "input__nav" : "input__nav_display"
+            }
             placeholder="..."
             type="text"
             onChange={handleLook}
             name="input"
           />
           <input
-            className="input__image jello-horizontal"
+            className={
+              location.pathname === "/"
+                ? "input__image jello-horizontal"
+                : "input__nav_display"
+            }
             type="image"
             src="../../../public/glass_input.png"
             alt="glasss"
           />
-          <select className="select__tags" onChange={handleTags}>
-            <option value="">...</option>
-            <option value="paisaje">Paisaje</option>
-            <option value="retrato">Retrato</option>
-            <option value="animal">Animal</option>
-            <option value="edificio">Edificio</option>
-          </select>
+          {location.pathname === "/" ? (
+            <select
+              className={
+                location.pathname === "/"
+                  ? "select__tags"
+                  : "input__nav_display"
+              }
+              onChange={handleTags}
+            >
+              <option value="">...</option>
+              <option value="paisaje">Landscape</option>
+              <option value="retrato">Portrait</option>
+              <option value="animal">Animal</option>
+              <option value="edificio">Building</option>
+            </select>
+          ) : (
+            <select
+              className={
+                location.pathname === "/favorites"
+                  ? "select__tags"
+                  : "input__nav_display"
+              }
+              onChange={handleTags}
+            >
+              <option value="">...</option>
+              <option value="width">Width</option>
+              <option value="height">Height</option>
+              <option value="likes">Likes</option>
+            </select>
+          )}
+          <Link
+            className={
+              location.pathname === "/favorites" || location.pathname === "/"
+                ? "input__nav_display"
+                : "link__home"
+            }
+            to={"/"}
+          >
+            HOME
+          </Link>
         </form>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
