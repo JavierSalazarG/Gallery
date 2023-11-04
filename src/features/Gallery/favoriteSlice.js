@@ -4,7 +4,7 @@ export const favoriteSlice = createSlice({
   name: "favorite",
 
   initialState: {
-    data: [],
+    data: JSON.parse(localStorage.getItem("favorites")) || [],
   },
 
   reducers: {
@@ -16,13 +16,23 @@ export const favoriteSlice = createSlice({
         );
       });
       state.data = [...state.data, ...uniqueNewFavorites];
+      localStorage.setItem("favorites", JSON.stringify(state.data));
     },
     deleteImage: (state, action) => {
-      state.data = state.data.filter((image) => image.id !== action.payload);
+      const imageIdToDelete = action.payload;
+      state.data = state.data.filter((image) => image.id !== imageIdToDelete);
+      localStorage.setItem("favorites", JSON.stringify(state.data));
+    },
+    updateImage: (state, action) => {
+      const updatedImage = action.payload;
+      state.data = state.data.map((image) =>
+        image.id === updatedImage.id ? updatedImage : image
+      );
+      localStorage.setItem("favorites", JSON.stringify(state.data));
     },
   },
 });
 
 export const getGalleryData = (state) => state.favorite.data;
 
-export const { addfavorite, deleteImage } = favoriteSlice.actions;
+export const { addfavorite, deleteImage, updateImage } = favoriteSlice.actions;

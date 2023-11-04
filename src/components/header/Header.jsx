@@ -3,9 +3,11 @@ import "./header.css";
 import { useState, useEffect } from "react";
 import heartImage from "../../../public/4eba1449b54ec1a2dc5c16b773e00b28.png";
 import volverImage from "../../../public/volver.svg";
-
+import { useDispatch } from "react-redux";
+import { galleryThunk } from "../../features/Gallery/galleryThunk";
 const Header = () => {
   const [look, setLook] = useState();
+  const dispatch = useDispatch();
   const [isFavoritePage, setIsFavoritePage] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -16,8 +18,13 @@ const Header = () => {
     setLook(e.target.value);
   };
 
+  const handleTags = (e) => {
+    dispatch(galleryThunk(e.target.value));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(galleryThunk(look));
   };
 
   return (
@@ -37,6 +44,13 @@ const Header = () => {
             src="../../../public/glass_input.png"
             alt="glasss"
           />
+          <select className="select__tags" onChange={handleTags}>
+            <option value="">...</option>
+            <option value="paisaje">Paisaje</option>
+            <option value="retrato">Retrato</option>
+            <option value="animal">Animal</option>
+            <option value="edificio">Edificio</option>
+          </select>
         </form>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

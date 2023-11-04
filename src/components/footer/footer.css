@@ -4,7 +4,89 @@
 
 .div__footer {
   width: 100%;
-  height: 0.7rem;
+  height: 1rem;
   background-color: #26a69a;
   box-shadow: 0px -8px 4px 0px #26a69a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.div__options {
+  width: 40%;
+  max-width: 12rem;
+  height: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #d84315;
+}
+.div__footer button {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  background-color: transparent;
+  cursor: pointer;
+  color: #d84315;
+}
+
+.div__footer p {
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+}
+.button__rapid {
+  cursor: pointer;
+  margin-bottom: 2.5rem !important;
+  font-size: 1.2rem !important;
+}
+
+@media (min-width: 730px) {
+  .div__footer p {
+    font-size: 2rem;
+  }
+  .button__rapid {
+    font-size: 1.5rem !important;
+  }
+  .div__footer button {
+    font-size: 3rem;
+  }
+  .div__options {
+    width: 100%;
+    max-width: 20rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .div__options {
+    margin-bottom: 4rem;
+  }
+}
+
+.blink-1:hover {
+  -webkit-animation: blink-1 0.6s both;
+  animation: blink-1 0.6s both;
+}
+
+@-webkit-keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
 }

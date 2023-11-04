@@ -1,8 +1,15 @@
-# React + Vite
+# Galería de Imágenes con React, React Router Dom y Redux Toolkit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una galería de imágenes que te permite explorar, añadir a favoritos, descargar, editar y eliminar imágenes. Está construido utilizando React, React Router Dom y Redux Toolkit.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Visualiza una colección de imágenes.
+- Añade tus imágenes favoritas.
+- Descarga imágenes.
+- Edita imágenes.
+- Elimina imágenes de tu colección.
+
+## Instalación
+
+1. **Clonar el Repositorio:**

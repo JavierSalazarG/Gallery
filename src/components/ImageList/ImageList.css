@@ -1,5 +1,6 @@
 .main {
-  width: 100%;
+  width: 98%;
+  margin-left: 1%;
   min-height: 40vh;
   display: grid;
   justify-items: center;
@@ -36,7 +37,20 @@
 .img_heart_good {
   width: 40px;
 }
-
+@media (min-width: 780px) {
+  .div__element {
+    width: 12rem;
+    height: 17rem;
+  }
+  .img__element {
+    width: 11rem;
+    height: 13rem;
+  }
+  .main {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2.5rem 3rem;
+  }
+}
 .pulsate-fwd:hover {
   -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
   animation: pulsate-fwd 0.5s ease-in-out infinite both;

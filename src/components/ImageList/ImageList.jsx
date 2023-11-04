@@ -20,7 +20,7 @@ const ImageList = () => {
     setDatas((prevDatas) =>
       prevDatas.map((data) => {
         if (data.id === id) {
-          return {
+          data = {
             ...data,
             favorite: !data.favorite,
           };
@@ -49,7 +49,7 @@ const ImageList = () => {
           width: dat.width,
           height: dat.height,
           likes: dat.likes,
-          favorite: false,
+          favorite: dat.favorite,
         }))
       );
       setIsLoading(false);

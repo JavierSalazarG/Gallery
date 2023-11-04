@@ -4,24 +4,44 @@ const key = import.meta.env.VITE_API_KEY;
 
 export const galleryThunk = createAsyncThunk(
   "search/galleryThunck",
-  async () => {
-    const response = await fetch(
-      `https://api.unsplash.com/search/photos?query=random&per_page=20&page=1&client_id=${key}`
-    );
+  async (look, page) => {
+    let url;
+    if (look === "") {
+      url = `https://api.unsplash.com/photos/random?client_id=${key}&count=10`;
+    } else {
+      url = `https://api.unsplash.com/search/photos?query=${look}&per_page=10&page=${page}&client_id=${key}`;
+    }
 
+    const response = await fetch(url);
+
+    let formattedData;
     if (response.ok) {
       const data = await response.json();
-      const formattedData = data.results.map((result) => ({
-        id: result.id,
-        url: result.urls.regular,
-        urlFull: result.urls.full,
-        description: result.description,
-        width: result.width,
-        height: result.height,
-        likes: result.likes,
-        download: result.links.download,
-        favorite: false,
-      }));
+      if (look === "") {
+        formattedData = data.map((result) => ({
+          id: result.id,
+          url: result.urls.regular,
+          urlFull: result.urls.full,
+          description: result.description,
+          width: result.width,
+          height: result.height,
+          likes: result.likes,
+          download: result.links.download,
+          favorite: false,
+        }));
+      } else {
+        formattedData = data.results.map((result) => ({
+          id: result.id,
+          url: result.urls.regular,
+          urlFull: result.urls.full,
+          description: result.description,
+          width: result.width,
+          height: result.height,
+          likes: result.likes,
+          download: result.links.download,
+          favorite: false,
+        }));
+      }
       return formattedData;
     } else {
       throw new Error("Failed to fetch data from the API");

@@ -34,3 +34,22 @@
   color: #d84315;
   font-weight: 800;
 }
+
+@media (min-width: 780px) {
+  .div__element_fav {
+    width: 12rem;
+    height: 17rem;
+  }
+  .img__element_fav {
+    width: 11rem;
+    height: 15rem;
+  }
+  .section {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2.5rem 3rem;
+  }
+}
+.pulsate-fwd:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+  animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
