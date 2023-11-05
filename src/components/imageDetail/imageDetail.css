@@ -1,5 +1,4 @@
 .div__container {
-  width: 100%;
   max-width: 26rem;
   margin: 0 auto;
   border-left: 2px solid #d84315;
@@ -39,7 +38,10 @@
 }
 
 .div__description {
-  width: 10rem;
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  word-wrap: break-word;
 }
 
 .div__description h2,
@@ -51,10 +53,11 @@
 .div__extent p {
   font-size: 0.85rem;
   margin-top: 0.5rem;
+  margin-left: 1rem;
 }
 
 .div__extent {
-  width: 10rem;
+  width: 6rem;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -78,6 +81,7 @@
   margin-top: 20%;
   transform: "translate(-50%, -50%)";
   width: 60%;
+  max-width: 44rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
   padding-left: 2rem;
@@ -86,12 +90,13 @@
   box-shadow: 24px;
   border-radius: 20px;
   box-shadow: 0px 1px 4px 0px #26a69a;
+  padding-right: 2rem;
 }
 
 .form__edit {
   display: flex;
   flex-direction: column;
-  padding-right: 2rem;
+  justify-content: center;
 }
 
 .form__edit textarea,
@@ -103,11 +108,11 @@
 }
 
 .div__buttons_edit {
-  width: 100%;
+  width: 90%;
   margin-top: 3rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .buttons__edit {
@@ -118,7 +123,12 @@
   width: 3rem;
   cursor: pointer;
 }
-
+@media (min-width: 400px) {
+  .div__description {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 @media (min-width: 700px) {
   .div__container {
     width: 100%;
@@ -144,12 +154,75 @@
     width: 35%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
   .div__extent {
     align-items: normal;
   }
 }
+@media (min-width: 800px) {
+  .div__container_img {
+    max-width: 50%;
+    height: 35rem;
+    max-width: none;
+    margin-left: 2rem;
+  }
+  .img__details {
+    height: 33rem;
+  }
+  .div__text_ccontainer {
+    height: 20rem;
+  }
+  .div__description p,
+  .div__extent p {
+    width: 90%;
+  }
+}
 
+@media (min-width: 1240px) {
+  .div__container_img {
+    max-width: 70%;
+    height: 45rem;
+  }
+  .img__details {
+    height: 40rem;
+  }
+  .div__text_ccontainer {
+    height: 25rem;
+  }
+  .div__description {
+    width: 100%;
+    max-width: none;
+  }
+  .div__description h2,
+  .div__extent h2 {
+    font-size: 1.5rem;
+  }
+  .div__description p,
+  .div__extent p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1700px) {
+  .div__container_img {
+    height: 65rem;
+  }
+  .img__details {
+    height: 55rem;
+  }
+  .div__description h2,
+  .div__extent h2 {
+    font-size: 2rem;
+  }
+  .div__description p,
+  .div__extent p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
 .vibrate-1:hover {
   -webkit-animation: vibrate-1 0.3s linear infinite both;
   animation: vibrate-1 0.3s linear infinite both;

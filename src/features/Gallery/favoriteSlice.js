@@ -32,6 +32,8 @@ export const favoriteSlice = createSlice({
     },
     filterFavorite: (state, action) => {
       state.filter = action.payload;
+      console.log(action.payload);
+      console.log("desde slice");
     },
   },
 });

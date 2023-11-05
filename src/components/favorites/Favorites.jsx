@@ -58,6 +58,16 @@ const Favorites = () => {
         return 0;
       });
       setImages(sortedImages);
+    } else {
+      const searchText = filterFavorite ? filterFavorite.toLowerCase() : "";
+      const filteredImages = imagesFavorite.filter((image) => {
+        const description = image.description
+          ? image.description.toLowerCase()
+          : "";
+        return description.includes(searchText);
+      });
+
+      setImages(filteredImages);
     }
   }, [filterFavorite]);
 

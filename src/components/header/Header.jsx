@@ -29,6 +29,10 @@ const Header = () => {
     }
   };
 
+  const handleDescription = (e) => {
+    dispatch(filterFavorite(e.target.value));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(galleryThunk(look));
@@ -38,18 +42,30 @@ const Header = () => {
     <header className="header">
       <div className="div__nav">
         <form onSubmit={handleSubmit} className="form__nav">
+          {location.pathname === "/" ? (
+            <input
+              className="input__nav"
+              placeholder="..."
+              type="text"
+              onChange={handleLook}
+              name="input"
+            />
+          ) : (
+            <input
+              className={
+                location.pathname === "/favorites"
+                  ? "input__nav"
+                  : "input__nav_display"
+              }
+              placeholder="search by description..."
+              type="text"
+              onChange={handleDescription}
+              name="input"
+            />
+          )}
           <input
             className={
-              location.pathname === "/" ? "input__nav" : "input__nav_display"
-            }
-            placeholder="..."
-            type="text"
-            onChange={handleLook}
-            name="input"
-          />
-          <input
-            className={
-              location.pathname === "/"
+              location.pathname === "/" || location.pathname === "/favorites"
                 ? "input__image jello-horizontal"
                 : "input__nav_display"
             }
@@ -87,11 +103,12 @@ const Header = () => {
               <option value="likes">Likes</option>
             </select>
           )}
+
           <Link
             className={
               location.pathname === "/favorites" || location.pathname === "/"
-                ? "input__nav_display"
-                : "link__home"
+                ? "input__nav_display "
+                : "link__home text-shadow-drop-center"
             }
             to={"/"}
           >
@@ -108,7 +125,7 @@ const Header = () => {
       <div className="div__button_save">
         <Link
           to={isFavoritePage ? "/" : "/favorites"}
-          className="button__save_img"
+          className="button__save_img "
         >
           <img
             className="img__heart pulsate-bck"
