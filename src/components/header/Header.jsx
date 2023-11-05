@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
+import glass from "../../../public/glass_input.png";
 import { useState, useEffect } from "react";
 import heartImage from "../../../public/4eba1449b54ec1a2dc5c16b773e00b28.png";
 import volverImage from "../../../public/volver.svg";
@@ -70,7 +71,7 @@ const Header = () => {
                 : "input__nav_display"
             }
             type="image"
-            src="../../../public/glass_input.png"
+            src={glass}
             alt="glasss"
           />
           {location.pathname === "/" ? (
