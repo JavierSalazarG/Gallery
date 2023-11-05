@@ -41,7 +41,7 @@ Asegúrate de obtener una clave API válida de Unsplash.
 
 ```bash
 npm run dev
-
+```
 ## Contribución
 Si deseas contribuir a este proyecto, sigue los pasos a continuación:
 
@@ -50,22 +50,22 @@ Si deseas contribuir a este proyecto, sigue los pasos a continuación:
 
 ```bash
 git clone https://github.com/TuUsuario/Gallery.git
-
+```
 3. Crea una rama para tu contribución.
 
 ```bash
 git checkout -b mi-contribucion
-
+```
 4.Realiza tus cambios y realiza commits.
 
 ```bash
 git commit -m "Añadir nuevas características"
-
+```
 5.Envía tus cambios a tu repositorio en GitHub.
 
 ```bash
 git push origin mi-contribucion
-
+```
 6.Crea una solicitud de extracción (PR) en GitHub desde tu repositorio bifurcado a este repositorio principal.
 
 
