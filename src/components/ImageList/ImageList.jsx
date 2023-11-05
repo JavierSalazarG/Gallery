@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ImageList.css";
+import corazon_activo from "../../../public/corazon-activo.svg";
+import corazon from "../../../public/corazon.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addfavorite } from "../../features/Gallery/favoriteSlice";
 import { galleryThunk } from "../../features/Gallery/galleryThunk.js";
@@ -73,11 +75,7 @@ const ImageList = () => {
                 className="pulsate-fwd"
                 color="img_heart_good"
                 onClick={() => handleFavorite(data.id)}
-                src={
-                  data.favorite
-                    ? "../../../public/corazon-activo.svg"
-                    : "../../../public/corazon.svg"
-                }
+                src={data.favorite ? corazon_activo : corazon}
               />
             </button>
           </div>

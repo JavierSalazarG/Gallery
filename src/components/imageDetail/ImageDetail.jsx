@@ -2,7 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
-
+import guardararchivo from "../../../public/guardar-el-archivo.svg";
+import volver from "../../../public/volver_naranja.svg";
+import lapiz from "../../../public/lapiz.svg";
+import descargar from "../../../public/descargas.svg";
+import papelera from "../../../public/papelera-de-reciclaje.svg";
 import Modal from "@mui/material/Modal";
 import {
   getGalleryData,
@@ -96,13 +100,10 @@ const ImageDetail = () => {
             />
             <div className="div__buttons_edit">
               <button onClick={handleUpdate} className="buttons__edit">
-                <img src="../../../public/guardar-el-archivo.svg" />
+                <img src={guardararchivo} />
               </button>
               <button onClick={handleClose} className="buttons__edit">
-                <img
-                  className="img__options vibrate-1"
-                  src="../../../public/volver_naranja.svg"
-                />
+                <img className="img__options vibrate-1" src={volver} />
               </button>
             </div>
           </form>
@@ -140,28 +141,25 @@ const ImageDetail = () => {
           <img
             onClick={handleDelete}
             className="img__options vibrate-1"
-            src="../../../public/papelera-de-reciclaje.svg"
+            src={papelera}
           />
         </button>
         <button>
           <img
             onClick={() => downloadImage(imageFavorite.urlFull, imageFavorite)}
             className="img__options vibrate-1"
-            src="../../../public/descargas.svg"
+            src={descargar}
           />
         </button>
         <button>
           <img
             onClick={handleOpen}
             className="img__options vibrate-1"
-            src="../../../public/lapiz.svg"
+            src={lapiz}
           />
         </button>
         <Link to="/favorites">
-          <img
-            className="img__options vibrate-1"
-            src="../../../public/volver_naranja.svg"
-          />
+          <img className="img__options vibrate-1" src={volver} />
         </Link>
       </div>
     </div>
