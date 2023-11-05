@@ -2,7 +2,6 @@
 
 Este proyecto es una aplicación de galería de imágenes que utiliza Vite como bundler, React para la interfaz de usuario y Material-UI para los componentes de diseño. La aplicación se conecta a la API de Unsplash para cargar imágenes y permite a los usuarios guardar imágenes en favoritos, descargarlas, editar sus descripciones y borrarlas.
 
-![Galería de Imágenes]('./public/captura_pantalla_1.png')
 
 ## Características
 
@@ -13,10 +12,7 @@ Este proyecto es una aplicación de galería de imágenes que utiliza Vite como 
 - Edición de descripciones de imágenes.
 - Eliminación de imágenes.
 
-## Capturas de Pantalla
 
-![Captura de Pantalla 1]('./public/captura_pantalla_2.png')
-![Captura de Pantalla 2]('./public/captura_pantalla_3.png')
 
 ## Uso
 
