@@ -24,13 +24,13 @@ Este proyecto es una aplicación de galería de imágenes que utiliza Vite como 
 
 ```bash
 git clone https://github.com/JavierSalazarG/Gallery.git
-
+```
 2. Instala las dependencias:
 
 ```bash
 cd Gallery
 npm install
-
+```
 3. Configura las variables de entorno:
 Crea un archivo .env en la raíz del proyecto y configura las siguientes variables:
 
