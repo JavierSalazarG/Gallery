@@ -7,9 +7,9 @@ export const galleryThunk = createAsyncThunk(
   async (look, page) => {
     let url;
     if (look === "") {
-      url = `https://api.unsplash.com/photos/random?client_id=${key}&count=10`;
+      url = `https://api.unsplash.com/photos/random?client_id=${key}&count=20`;
     } else {
-      url = `https://api.unsplash.com/search/photos?query=${look}&per_page=10&page=${page}&client_id=${key}`;
+      url = `https://api.unsplash.com/search/photos?query=${look}&per_page=20&page=${page}&client_id=${key}`;
     }
 
     const response = await fetch(url);

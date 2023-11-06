@@ -3,7 +3,10 @@ import "./ImageList.css";
 import corazon_activo from "../../../public/corazon-activo.svg";
 import corazon from "../../../public/corazon.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addfavorite } from "../../features/Gallery/favoriteSlice";
+import {
+  addfavorite,
+  getGalleryData,
+} from "../../features/Gallery/favoriteSlice";
 import { galleryThunk } from "../../features/Gallery/galleryThunk.js";
 import {
   fetchData,
@@ -16,8 +19,10 @@ const ImageList = () => {
   const data = useSelector(fetchData);
   const status = useSelector(fetchStatus);
   const error = useSelector(fetchError);
+  const imagesFavorite = useSelector(getGalleryData);
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const handleFavorite = (id) => {
     setDatas((prevDatas) =>
       prevDatas.map((data) => {
@@ -61,6 +66,10 @@ const ImageList = () => {
     }
   }, [dispatch, status]);
 
+  const isImageInFavorites = (image, favorites) => {
+    return favorites.some((favorite) => favorite.id === image.id);
+  };
+
   return (
     <main className="main">
       {isLoading ? (
@@ -75,7 +84,11 @@ const ImageList = () => {
                 className="pulsate-fwd"
                 color="img_heart_good"
                 onClick={() => handleFavorite(data.id)}
-                src={data.favorite ? corazon_activo : corazon}
+                src={
+                  isImageInFavorites(data, imagesFavorite)
+                    ? corazon_activo
+                    : corazon
+                }
               />
             </button>
           </div>
