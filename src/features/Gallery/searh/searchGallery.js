@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { galleryThunk } from "./galleryThunk";
+import { galleryThunk } from "../galleryThunk";
 
 export const searchGallery = createSlice({
   name: "search",

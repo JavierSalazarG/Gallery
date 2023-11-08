@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import {
   getGalleryData,
   getInfoFilter,
-} from "../../features/Gallery/favoriteSlice";
+} from "../../features/Gallery/favorite/favoriteSlice";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 

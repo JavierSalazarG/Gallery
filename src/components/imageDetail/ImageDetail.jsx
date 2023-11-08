@@ -12,7 +12,7 @@ import {
   getGalleryData,
   deleteImage,
   updateImage,
-} from "../../features/Gallery/favoriteSlice";
+} from "../../features/Gallery/favorite/favoriteSlice";
 import "./imageDetail.css";
 
 const ImageDetail = () => {

@@ -7,7 +7,7 @@ import volverImage from "../../../public/volver.svg";
 import { useDispatch } from "react-redux";
 import { galleryThunk } from "../../features/Gallery/galleryThunk";
 
-import { filterFavorite } from "../../features/Gallery/favoriteSlice.js";
+import { filterFavorite } from "../../features/Gallery/favorite/favoriteSlice";
 
 const Header = () => {
   const [look, setLook] = useState();

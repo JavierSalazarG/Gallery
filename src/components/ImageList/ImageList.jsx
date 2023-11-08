@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addfavorite,
   getGalleryData,
-} from "../../features/Gallery/favoriteSlice";
+} from "../../features/Gallery/favorite/favoriteSlice";
 import { galleryThunk } from "../../features/Gallery/galleryThunk.js";
 import {
   fetchData,
   fetchStatus,
   fetchError,
-} from "../../features/Gallery/searchGallery.js";
+} from "../../features/Gallery/searh/searchGallery.js";
 
 const ImageList = () => {
   const dispatch = useDispatch();
