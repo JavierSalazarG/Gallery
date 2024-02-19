@@ -30,4 +30,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.CLAVE_PRIVADA_AWS }}
           AWS_REGION: "eu-west-3"
           SOURCE_DIR: "dist"
-          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+          VITE_API_KEY: ${{ vars.VITE_API_KEY }}
