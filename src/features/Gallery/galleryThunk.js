@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const key = import.meta.env.VITE_API_KEY;
+const key = "wsUd6_u8bAtn2bR_3fg5gfQ2_EyuObcbT1_6f9cSJa8";
 
 export const galleryThunk = createAsyncThunk(
   "search/galleryThunck",
